@@ -2,12 +2,19 @@ const express = require('express');
 const app = express();
 const knex = require('knex')(require('./knexfile.js')[process.env.NODE_ENV || 'development']);
 
-app.get('/', (req, res) => {
+
+
+app.get('/', (req, res) => { 
     res.send('MFIT for life')
 })
 
-app.get('/login', (req, res) => {
-    res.send('You\'re now logged in');
+app.get('/UserLanding', (req, res) => {
+    res.send('TEST')
+})
+
+app.post('/login', (req, res) => {
+    const { username } = req.body;
+    res.send(`Welcome: ${username}`);
 })
 
 // app.get('/branch', function(req, res){
