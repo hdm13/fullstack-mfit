@@ -4,6 +4,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { AppContext } from "./AppContext";
 import { LoginPage } from "./components/LoginPage";
 import { UserLanding } from "./components/UserLanding";
+import Dropdown from "./components/Dropdown";
 
 function App() {
 
@@ -30,7 +31,8 @@ function App() {
         <AppContext.Provider value={value}>
           <Routes>
             <Route exact path="/" element={<LoginPage />} />
-            <Route exact path="/member/:id" element={<UserLanding />} />
+            <Route exact path="/member" element={<UserLanding />} />
+            <Route exact path="/test" element={<Dropdown />} />
           </Routes>
         </AppContext.Provider>
       </Router>
