@@ -1,14 +1,14 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { AppContext } from "../AppContext";
 import "../App.css"
 import MilitaryFitnessTrackerDefault from "../pictures/MilitaryFitnessTrackerDefault.png"
-import "bootstrap/dist/js/bootstrap.bundle.min";
+
 
 
 export const LoginPage = () => {
-
+    let navigate = useNavigate()
     const database = [
         {username:'user1',
          password:'pass1'
@@ -40,7 +40,8 @@ export const LoginPage = () => {
     const handleLogin = () =>{
         const login = members.filter(member => document.getElementById("username").value.toLowerCase() === member.username.toLowerCase()
             && document.getElementById("password").value === member.password)
-           login.length === 1 ? alert("Congrats!") : alert("Try again!");
+           login.length === 1 ? navigate("/member"): alert("Try again!");
+           
            
     }
     

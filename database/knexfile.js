@@ -3,19 +3,23 @@
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
-module.exports = {
+ export default {
 
   development: {
-    client: 'sqlite3',
+    client: 'pg',
     connection: {
-      filename: './dev.sqlite3'
+      database: 'mfit',
+      user: 'postgres',
+      password: 'docker',
+      port: 5432,
+      host: '127.0.0.1',
     }
   },
 
   staging: {
     client: 'postgresql',
     connection: {
-      database: 'my_db',
+      database: 'mFIT',
       user:     'username',
       password: 'password'
     },
@@ -31,7 +35,7 @@ module.exports = {
   production: {
     client: 'postgresql',
     connection: {
-      database: 'my_db',
+      database: 'mFIT',
       user:     'username',
       password: 'password'
     },
