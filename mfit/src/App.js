@@ -7,20 +7,33 @@ import { UserLanding } from "./components/UserLanding";
 import Dropdown from "./components/Dropdown";
 
 function App() {
+  const [members, setMembers] = useState([])
+  const [userData, setUserData] = useState({
+    id:'',
+    username: '',
+    password: '',
+    name: '',
+    branch:'',
+    gender:'',
+    physicalLimitations:'',
+    theme: "light"
+  });
 
-  const [ members, setMembers] = useState([]);
+  
 
   // api fetch
-  useEffect(() => {
-    fetch('http://localhost:8080')
-        .then(res => res.json())
-        .then(data =>
-            setMembers(data)
-          )
-  }, []);
+  // useEffect(() => {
+  //   fetch('http://localhost:8080')
+  //       .then(res => res.json())
+  //       .then(data =>
+  //           setMembers(data)
+  //         )
+  // }, []);
 
   //getter & setter
   const value = {
+    userData,
+    setUserData,
     members,
     setMembers
   };
@@ -32,6 +45,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<LoginPage />} />
             <Route exact path="/member" element={<UserLanding />} />
+            <Route exact path="/member/:id" element={<UserLanding />} />
             <Route exact path="/test" element={<Dropdown />} />
           </Routes>
         </AppContext.Provider>

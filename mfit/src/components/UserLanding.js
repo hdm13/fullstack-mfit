@@ -5,22 +5,24 @@ import { AppContext } from "../AppContext";
 import { Header } from './Header';
 import { Container } from './styles/Container.styled';
 import { ThemeProvider } from 'styled-components';
+import { StyledHeader } from './styles/Header.styled';
+import { LineGraph } from './LineGraph';
 
-// const theme = {
-//     colors: {
-//         header: '#ebfbff',
-//     },
-// }
 
 
 export const UserLanding = () => {
-    return(
-        // <ThemeProvider theme={theme}>
+    return (
         <>
-        <Header />
-         <Container>  
-               <p>Main Content...</p>
-         </Container>
-      </>
+            <Header />
+            <Container>
+                <p>Main Content...</p>
+            </Container>
+                <div className="app">
+                    <h2>Chart</h2>
+                    <div className="wrapper">
+                        {/* <LineGraph /> */}
+                    </div>
+                </div>
+        </>
     )
 }
