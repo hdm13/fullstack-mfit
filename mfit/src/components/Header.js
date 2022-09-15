@@ -1,18 +1,16 @@
 import React, { useState, useEffect, useContext } from "react";
 import styled from "styled-components";
 import MilitaryFitnessTrackerIcon from "../pictures/MilitaryFitnessTrackerIcon.png"
-
+// import { StyledHeader } from "./styles/Header.styled";
 
 
 const NavContainer = styled.div`
-max-width: 100%; 
+  max-width: 100%; 
   padding: 0 1px;
-  margin: 0 auto;
   display: flex;
   flex-basis: auto;
-  flex-direction: row;
   justify-content:right;
-
+  
 `
 const Image = styled.img`
 &:hover {
@@ -47,22 +45,18 @@ const Image = styled.img`
 //   flex: 1;
 // }`
 const SmSettings = styled.div`
+    margin-top: 3%;
     text-align: center;
 `
 
 const NavRight = styled.nav`
-display: flex;
-align-items: right;
-justify-content: right;
-
-flex-direction: row;
 `
 const StyledHeader = styled.header`
 background-color: #00242C;
 padding: 5px 0;
 padding-bottom: 5px;
 height: 150px;
-margin-top: 5px;
+margin-top: 2px;
 color: #ffffff;
 `
 
@@ -72,10 +66,14 @@ export const Header = () => {
     //     if ( )
     //   }
 
-
     return (
+        // <>
+        // // <header>
+        // //   <h1><SmSettings> USERNAME </SmSettings></h1>
+        // // </header>
+        // </>
         <>
-            <StyledHeader style={{ gap: '10px 20px' }}>
+            <StyledHeader>            
             <SmSettings> USERNAME </SmSettings>
                 <NavContainer style={{ gap: '10px 20px', justifycontent: 'space-between' }}>
                     <NavRight> 
@@ -83,7 +81,6 @@ export const Header = () => {
                     </NavRight>
                 </NavContainer>
             </StyledHeader>
-
         </>
     )
 }
