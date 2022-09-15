@@ -38,7 +38,7 @@ export const LoginPage = () => {
        
     }
     const handleLogin = () =>{
-        const login = members.filter(member => document.getElementById("username").value.toLowerCase() === member.username
+        const login = members.filter(member => document.getElementById("username").value.toLowerCase() === member.username.toLowerCase()
             && document.getElementById("password").value === member.password)
            login.length === 1 ? alert("Congrats!") : alert("Try again!");
            
